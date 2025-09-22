@@ -37,9 +37,9 @@ public class ED003 {
             }            
         }
         
-        System.out.println("La sumatoria es:" +  sumatoria);
-        System.out.println("La monto mayor es:" +  montomayor);
-        System.out.println("La monto menor es:" +  montomenor);
+        System.out.println("La sumatoria es: " +  sumatoria);
+        System.out.println("La monto mayor es: " +  montomayor);
+        System.out.println("La monto menor es: " +  montomenor);
     }
 
 }
