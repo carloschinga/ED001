@@ -16,6 +16,9 @@ public class ED001 {
         int[] codigo= new int[5];
         String[] nombre=new String[5];    
         double[] monto= new double[5];
+        
+        double sumatoria=0;
+        
         for (int i = 0; i < 5; i++) {
             codigo[i]= (i+1);
             nombre[i]= JOptionPane.
@@ -26,7 +29,10 @@ public class ED001 {
                         );                    
         }
         for (int i = 0; i < 5; i++) {
-            System.out.println(codigo[i] + " - "+ nombre[i] + " - " + monto[i]);            
-        }        
+            System.out.println(codigo[i] + " - "+ nombre[i] + " - " + monto[i]);
+            //angel
+            sumatoria=sumatoria+monto[i];
+        }    
+            System.out.print("sumatoria: " + sumatoria);
     }
 }
