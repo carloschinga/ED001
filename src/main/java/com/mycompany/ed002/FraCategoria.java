@@ -9,12 +9,19 @@ package com.mycompany.ed002;
  * @author USER
  */
 public class FraCategoria extends javax.swing.JFrame {
-
+    CategoriaLista categoriaLista= new CategoriaLista();
     /**
      * Creates new form FraCategoria
      */
     public FraCategoria() {
-        initComponents();
+        initComponents();      
+        cargarDatos();
+    }
+    
+    public void cargarDatos(){
+        Categoria c= categoriaLista.get();
+        txtCodigo.setText(String.valueOf(c.getCodigo()));
+        txtNombre.setText(c.getNombre());
     }
 
     /**
@@ -42,12 +49,32 @@ public class FraCategoria extends javax.swing.JFrame {
         lblNombre.setText("Nombre:");
 
         btnPrimero.setText("|<");
+        btnPrimero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrimeroActionPerformed(evt);
+            }
+        });
 
         btnAnterior.setText("<");
+        btnAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnteriorActionPerformed(evt);
+            }
+        });
 
         btnSiguiente.setText(">");
+        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguienteActionPerformed(evt);
+            }
+        });
 
         btnUltimo.setText(">|");
+        btnUltimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUltimoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +124,26 @@ public class FraCategoria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPrimeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeroActionPerformed
+        categoriaLista.primero();
+        cargarDatos();
+    }//GEN-LAST:event_btnPrimeroActionPerformed
+
+    private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
+        categoriaLista.anterior();
+        cargarDatos();
+    }//GEN-LAST:event_btnAnteriorActionPerformed
+
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        categoriaLista.siguiente();
+        cargarDatos();
+    }//GEN-LAST:event_btnSiguienteActionPerformed
+
+    private void btnUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimoActionPerformed
+        categoriaLista.ultimo();
+        cargarDatos();
+    }//GEN-LAST:event_btnUltimoActionPerformed
 
     /**
      * @param args the command line arguments
