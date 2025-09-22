@@ -18,6 +18,8 @@ public class ED001 {
         double[] monto= new double[5];
         
         double sumatoria=0;
+        double montomenor;
+        double montomayor;
         
         for (int i = 0; i < 5; i++) {
             codigo[i]= (i+1);
@@ -28,11 +30,21 @@ public class ED001 {
                             showInputDialog("Ingrese monto " + (i+1)+":")
                         );                    
         }
+        montomenor=monto[0];
+        montomayor=monto[0];
         for (int i = 0; i < 5; i++) {
             System.out.println(codigo[i] + " - "+ nombre[i] + " - " + monto[i]);
-            //angel
             sumatoria=sumatoria+monto[i];
+            
+            if(montomenor>monto[i]){
+                montomenor=monto[i];
+            }
+            if(montomayor<monto[i]){
+                montomayor=monto[i];
+            }
         }    
-            System.out.print("sumatoria: " + sumatoria);
+        System.out.println("sumatoria: " + sumatoria);
+        System.out.println("monto menor: " + montomenor);
+        System.out.println("monto mayor: " + montomayor);
     }
 }
