@@ -14,6 +14,8 @@ public class ED004 {
         
     public static void main(String[] args) {
         List<Producto> listaProductos= new ArrayList<Producto>();
+        List<Producto> listaProductosCervezas= new ArrayList<Producto>();
+        
         int codigo; String nombre; double precio;  String categoria;
         
         for (int i = 0; i < 3; i++) {
@@ -30,6 +32,14 @@ public class ED004 {
             Producto p= listaProductos.get(i);
             System.out.println(p.getNombre()+"-"+ p.getPrecio());
         }
+        
+        for (int i = 0; i < 3; i++) {
+            Producto p= listaProductos.get(i);
+            if(p.getCategoria().equals("Cervezas")){
+                listaProductosCervezas.add(p);
+            }        
+        }
+        System.out.println("Existen" + listaProductosCervezas.size() + " tipos de cervezas");
     }
 
 }
